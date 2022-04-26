@@ -3,7 +3,6 @@
     display: grid;
     width: 1200px;
     grid-template-areas: 'h h' 'n c';
-
     grid-template-columns: 80px 1fr;
     grid-template-rows: 80px 10fr;
 }

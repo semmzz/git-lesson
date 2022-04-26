@@ -2,26 +2,50 @@ import React from "react";
 import classes from './Navbar.module.css';
 import {NavLink} from "react-router-dom";
 
-
 const Navbar = () => {
     return (
-        <nav className={classes.nav}>
-            <div className={classes.item}>
-                <a href="/profile">Profile</a>
+        <div className={classes.nav}>
+            <div>
+                <NavLink to={'/profile'}
+                         className={({isActive}) => (
+                             isActive
+                                 ? classes.itemActive
+                                 : classes.item
+                         )}>Profile</NavLink>
             </div>
-            <div className={classes.item}>
-                <a href="/dialogs">Messages</a>
+            <div>
+                <NavLink to={'/dialogs'}
+                         className={({isActive}) => (
+                             isActive
+                                 ? classes.itemActive
+                                 : classes.item
+                         )}>Messages</NavLink>
             </div>
-            <div className={classes.item}>
-                <a href="/news">News</a>
+            <div>
+                <NavLink to={'/news'}
+                         className={({isActive}) => (
+                             isActive
+                                 ? classes.itemActive
+                                 : classes.item
+                         )}>News</NavLink>
             </div>
-            <div className={classes.item}>
-                <a href="/music">Music</a>
+            <div>
+                <NavLink to={'/music'}
+                         className={({isActive}) => (
+                             isActive
+                                 ? classes.itemActive
+                                 : classes.item
+                         )}>Music</NavLink>
             </div>
-            <div className={classes.item}>
-                <a href="/settings">Settings</a>
+            <div>
+                <NavLink to={'/settings'}
+                         className={({isActive}) => (
+                             isActive
+                                 ? classes.itemActive
+                                 : classes.item
+                         )}>Settings</NavLink>
             </div>
-        </nav>
+        </div>
     );
 }
 
