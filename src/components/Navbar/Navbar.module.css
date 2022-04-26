@@ -3,16 +3,7 @@
     grid-area: n;
 }
 
-.item {
-    display: block;
-    text-decoration: none;
+.item a{
     color: white;
-}
-
-
-
-.itemActive {
     text-decoration: none;
-    color: #ad2d46 !important;
 }
-
