@@ -5,7 +5,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom";
 
-
 const posts = [
     {id:1, text: 'It\'s my first post!', likesCount: 15},
     {id:2, text: 'Hi, how are you?', likesCount: 19},
