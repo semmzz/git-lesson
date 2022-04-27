@@ -5,11 +5,19 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom";
 
+
+const posts = [
+    {id:1, text: 'It\'s my first post!', likesCount: 15},
+    {id:2, text: 'Hi, how are you?', likesCount: 19},
+    {id:3, text: 'Wow!', likesCount: 61},
+    {id:4, text: 'Ok', likesCount: 33},
+]
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <BrowserRouter>
         <React.StrictMode>
-            <App/>
+            <App posts={posts}/>
         </React.StrictMode>
     </BrowserRouter>
 );
