@@ -6,9 +6,16 @@ import reportWebVitals from './reportWebVitals';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+const posts = [
+    {id: 1, text: "It's my first post!", likesCount: 28},
+    {id: 2, text: "2nd post!", likesCount: 233},
+    {id: 3, text: "How are you?", likesCount: 15},
+]
+
 root.render(
     <React.StrictMode>
-            <App/>
+            <App posts={posts}/>
     </React.StrictMode>
 );
 
