@@ -3,7 +3,24 @@
     grid-area: n;
 }
 
-.item a{
-    color: white;
+/*.item{*/
+/*    display: block;*/
+/*    color: white;*/
+/*    text-decoration: none;*/
+/*}*/
+
+/*.item  {*/
+/*    text-decoration: none;*/
+/*    color: red;*/
+/*}*/
+
+
+.link {
     text-decoration: none;
+    color: white;
+}
+
+.linkActive {
+    text-decoration: none;
+    color: #ad2d46 !important;
 }

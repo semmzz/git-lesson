@@ -6,21 +6,43 @@ import {NavLink} from "react-router-dom";
 const Navbar = () => {
     return (
         <nav className={classes.nav}>
-            <div className={classes.item}>
-                <a href="/profile">Profile</a>
-            </div>
-            <div className={classes.item}>
-                <a href="/dialogs">Messages</a>
-            </div>
-            <div className={classes.item}>
-                <a href="/news">News</a>
-            </div>
-            <div className={classes.item}>
-                <a href="/music">Music</a>
-            </div>
-            <div className={classes.item}>
-                <a href="/settings">Settings</a>
-            </div>
+
+                <div>
+                    <NavLink to="/profile"
+                             className={({isActive}) => {
+                                 return isActive ? classes.linkActive : classes.link
+                             }}
+                    >Profile</NavLink>
+                </div>
+                <div>
+                    <NavLink to="/dialogs"
+                             className={({isActive}) => {
+                                 return isActive ? classes.linkActive : classes.link
+                             }}
+                    >Messages</NavLink>
+                </div>
+                <div>
+                    <NavLink to="/news"
+                             className={({isActive}) => {
+                                 return isActive ? classes.linkActive : classes.link
+                             }}
+                    >News</NavLink>
+                </div>
+                <div>
+                    <NavLink to="/music"
+                             className={({isActive}) => {
+                                 return isActive ? classes.linkActive : classes.link
+                             }}
+                    >Music</NavLink>
+                </div>
+                <div>
+                    <NavLink to="/settings"
+                             className={({isActive}) => {
+                                 return isActive ? classes.linkActive : classes.link
+                             }}
+                    >Settings</NavLink>
+                </div>
+
         </nav>
     );
 }
