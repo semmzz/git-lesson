@@ -5,40 +5,29 @@ import {NavLink} from "react-router-dom";
 
 const Navbar = () => {
     return (
-        <nav className={classes.nav}>
+        <div className={classes.nav}>
+            <NavLink to={'/profile'}
+                     className={({isActive}) => (
+                         isActive ? classes.itemActive : classes.item
+                     )}>Profile</NavLink>
+            <NavLink to={'/dialogs'}
+                     className={({isActive}) => (
+                         isActive ? classes.itemActive : classes.item
+                     )}>Messages</NavLink>
+            <NavLink to={'/news'}
+                     className={({isActive}) => (
+                         isActive ? classes.itemActive : classes.item
+                     )}>News</NavLink>
+            <NavLink to={'/music'}
+                     className={({isActive}) => (
+                         isActive ? classes.itemActive : classes.item
+                     )}>Music</NavLink>
+            <NavLink to={'/settings'}
+                     className={({isActive}) => (
+                         isActive ? classes.itemActive : classes.item
+                     )}>Settings</NavLink>
+        </div>
 
-            <div>
-                <NavLink to="/profile"
-                         className={({isActive}) => {
-                             return isActive ? classes.linkActive : classes.link
-                         }}>Profile</NavLink>
-            </div>
-            <div>
-                <NavLink to="/dialogs"
-                         className={({isActive}) => {
-                             return isActive ? classes.linkActive : classes.link
-                         }}>Messages</NavLink>
-            </div>
-            <div>
-                <NavLink to="/news"
-                         className={({isActive}) => {
-                             return isActive ? classes.linkActive : classes.link
-                         }}>News</NavLink>
-            </div>
-            <div>
-                <NavLink to="/music"
-                         className={({isActive}) => {
-                             return isActive ? classes.linkActive : classes.link
-                         }}>Music</NavLink>
-            </div>
-            <div>
-                <NavLink to="/settings"
-                         className={({isActive}) => {
-                             return isActive ? classes.linkActive : classes.link
-                         }}>Settings</NavLink>
-            </div>
-
-        </nav>
     );
 }
 

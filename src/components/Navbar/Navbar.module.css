@@ -3,24 +3,15 @@
     grid-area: n;
 }
 
-/*.item{*/
-/*    display: block;*/
-/*    color: white;*/
-/*    text-decoration: none;*/
-/*}*/
-
-/*.item  {*/
-/*    text-decoration: none;*/
-/*    color: red;*/
-/*}*/
-
-
-.link {
-    text-decoration: none;
+.item{
     color: white;
+    text-decoration: none;
+    display: block;
 }
 
-.linkActive {
+.itemActive {
+    border-radius: 5px ;
+    background-color: #fff;
+    color: #0b1440;
     text-decoration: none;
-    color: #ad2d46 !important;
 }
