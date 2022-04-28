@@ -1,3 +1,5 @@
+import {renderEntireTree} from "../index";
+
 const state = {
     profilePage: {
         posts: [
@@ -6,6 +8,7 @@ const state = {
             {id: 3, text: 'Wow!', likesCount: 61},
             {id: 4, text: 'Ok', likesCount: 33},
         ],
+        newPostText: '',
 
     },
 
@@ -28,14 +31,20 @@ const state = {
     },
 }
 
-export const addPost = (postMessage) => {
+export const addPost = () => {
     const newPost = {
         id: state.profilePage.posts.length + 1,
-        text: postMessage,
+        text: state.profilePage.newPostText,
         likesCount: 0,
     };
+    state.profilePage.posts.push(newPost);
+    state.profilePage.newPostText = '';
+    renderEntireTree();
+}
 
-    state.profilePage.posts.push(newPost)
+export const updateNewPostText = (newText) => {
+    state.profilePage.newPostText = newText;
+    renderEntireTree();
 }
 
 export default state;
