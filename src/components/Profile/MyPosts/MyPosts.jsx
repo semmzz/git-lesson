@@ -5,8 +5,9 @@ import Post from "./Post/Post";
 
 const MyPosts = (props) => {
 
-    const postElements = props.posts.map((el)=>
-         <Post message={el.text} likesCount={el.likesCount}/>
+    // props.posts - Info about posts from index.js
+    const postElements = props.posts.map((p)=>
+         <Post message={p.text} likesCount={p.likesCount}/>
     )
 
     return (

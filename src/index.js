@@ -4,24 +4,41 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom";
+import state from "./redux/state";
 
-const posts = [
-    {id:1, text: 'It\'s my first post!', likesCount: 15},
-    {id:2, text: 'Hi, how are you?', likesCount: 19},
-    {id:3, text: 'Wow!', likesCount: 61},
-    {id:4, text: 'Ok', likesCount: 33},
-]
+// const posts = [
+//     {id: 1, text: 'It\'s my first post!', likesCount: 15},
+//     {id: 2, text: 'Hi, how are you?', likesCount: 19},
+//     {id: 3, text: 'Wow!', likesCount: 61},
+//     {id: 4, text: 'Ok', likesCount: 33},
+// ]
+//
+// const dialogs = [
+//     {id: 1, name: 'Vlad'},
+//     {id: 2, name: 'Diana'},
+//     {id: 3, name: 'Sergey'},
+//     {id: 4, name: 'Vitaliy'},
+//     {id: 5, name: 'Emma'},
+//     {id: 6, name: 'Sebastian'},
+// ]
+//
+// const messagesData = [
+//     {id: 1, text: 'Hi!!'},
+//     {id: 2, text: 'How are you?'},
+//     {id: 3, text: 'Yo'},
+//     {id: 4, text: 'Ok'},
+//     {id: 5, text: 'Yo'},
+// ]
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <BrowserRouter>
         <React.StrictMode>
-            <App posts={posts}/>
+
+            <App state={state}/>
         </React.StrictMode>
     </BrowserRouter>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
