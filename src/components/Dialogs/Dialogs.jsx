@@ -5,7 +5,7 @@ import Message from "./Message/Message";
 
 
 const Dialogs = (props) => {
-
+    //props - dialogsPage
     // Companions
     const dialogElements = props.state.dialogs.map((d) => (
         <DialogItem name={d.name} id={d.id.toString()}/>
@@ -18,24 +18,30 @@ const Dialogs = (props) => {
 
     const newMessage = React.createRef();
 
-    const sendMessage = () => {
+    const onChangeMessageText = () => {
         const text = newMessage.current.value;
-        alert('New message:' + text)
+        props.updateNewMessageText(text);
     }
 
+    const sendMessage = () => {
+        props.sendMessage();
+    }
 
     return (
         <div className={classes.dialogs}>
-
-            <div className={classes.dialogItems}>
+            <div>
                 {dialogElements}
             </div>
 
-            <div className={classes.messages}>
+            <div>
                 {messageElements}
 
-                <textarea ref={newMessage} />
-                <button onClick={sendMessage}>Send message</button>
+                <textarea onChange={onChangeMessageText}
+                          ref={newMessage}
+                          value={props.state.newMessageText}/>
+                <button onClick={sendMessage}
+                >Send message
+                </button>
             </div>
 
 

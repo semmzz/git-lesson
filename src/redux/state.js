@@ -8,6 +8,7 @@ const state = {
             {id: 3, text: 'Wow!', likesCount: 61},
             {id: 4, text: 'Ok', likesCount: 33},
         ],
+
         newPostText: '',
 
     },
@@ -21,6 +22,7 @@ const state = {
             {id: 5, name: 'Emma'},
             {id: 6, name: 'Sebastian'},
         ],
+
         messagesData: [
             {id: 1, text: 'Hi!'},
             {id: 2, text: 'How are you?'},
@@ -28,6 +30,8 @@ const state = {
             {id: 4, text: 'Ok'},
             {id: 5, text: 'Yo'},
         ],
+        newMessageText: '',
+
     },
 }
 
@@ -44,6 +48,21 @@ export const addPost = () => {
 
 export const updateNewPostText = (newText) => {
     state.profilePage.newPostText = newText;
+    renderEntireTree();
+}
+
+export const sendMessage = () => {
+    const newMessage = {
+        id: state.dialogsPage.messagesData.length + 1,
+        text: state.dialogsPage.newMessageText,
+    }
+    state.dialogsPage.messagesData.push(newMessage);
+    state.dialogsPage.newMessageText = '';
+    renderEntireTree();
+}
+
+export const updateNewMessageText = (newText) => {
+    state.dialogsPage.newMessageText = newText;
     renderEntireTree();
 }
 
