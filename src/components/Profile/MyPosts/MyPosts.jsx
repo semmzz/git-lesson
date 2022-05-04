@@ -14,13 +14,16 @@ const MyPosts = (props) => {
     const addPost = () => {
         const text = newPostElement.current.value;
         if (text.length) {
-            props.addPost();
+            props.dispatch({type: "ADD-POST"});
         }
     };
 
     const onPostChange = () => {
         const text = newPostElement.current.value;
-        props.updateNewPostText(text);
+        props.dispatch({
+            type: 'UPDATE-NEW-POST-TEXT',
+            newText: text,
+        });
     }
 
     return (
