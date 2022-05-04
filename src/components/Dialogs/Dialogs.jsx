@@ -24,7 +24,9 @@ const Dialogs = (props) => {
     }
 
     const sendMessage = () => {
-        props.sendMessage();
+        if (props.state.newMessageText.length) {
+            props.sendMessage();
+        }
     }
 
     return (
