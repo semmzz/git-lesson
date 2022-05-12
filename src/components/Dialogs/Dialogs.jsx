@@ -5,9 +5,6 @@ import Message from "./Message/Message";
 import {sendMessageActionCreator, updateNewMessageTextActionCreator} from "../../redux/state";
 
 
-
-
-
 const Dialogs = (props) => {
     //props - dialogsPage
     // Companions

@@ -22,8 +22,8 @@ const reRenderEntireTree = () => {
 }
 
 
-reRenderEntireTree();
-
 store.subscribe(reRenderEntireTree)
+
+reRenderEntireTree();
 
 reportWebVitals();
