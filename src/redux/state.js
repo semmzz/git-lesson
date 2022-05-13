@@ -55,6 +55,7 @@ const store = {
 
         this._callSubscriber();
     }
+
 }
 
 export const addPostActionCreator = () => ({

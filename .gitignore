@@ -21,3 +21,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+/.idea
+
+# e7c1f0d001e04a3a198c4b5305751ac570af08fb

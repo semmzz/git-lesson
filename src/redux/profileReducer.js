@@ -4,6 +4,7 @@ const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const profileReducer = (state, action) => {
 
     switch (action.type) {
+
         case ADD_POST: {
             const newPost = {
                 id: state.posts.length + 1,
@@ -19,6 +20,7 @@ const profileReducer = (state, action) => {
             state.newPostText = action.newText;
             return state
         }
+
         default:
             return state;
     }
