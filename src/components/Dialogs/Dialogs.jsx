@@ -6,14 +6,13 @@ import {sendMessageActionCreator, updateNewMessageTextActionCreator} from "../..
 
 
 const Dialogs = (props) => {
-    //props - dialogsPage
     // Companions
-    const dialogElements = props.state.dialogs.map((d) => (
+    const dialogElements = props.dialogsPage.dialogs.map((d) => (
         <DialogItem name={d.name} id={d.id.toString()}/>
     ))
 
     // Messages in dialog
-    const messageElements = props.state.messagesData.map((m) => (
+    const messageElements = props.dialogsPage.messagesData.map((m) => (
         <Message text={m.text}/>
     ))
 
@@ -21,12 +20,13 @@ const Dialogs = (props) => {
 
     const onChangeMessageText = () => {
         const text = newMessage.current.value;
-        props.dispatch(updateNewMessageTextActionCreator(text))
+        props.onChangeMessageText(text);
+
     }
 
-    const sendMessage = () => {
-        if (props.state.newMessageText.length) {
-            props.dispatch(sendMessageActionCreator())
+    const onSendMessage = () => {
+        if (props.dialogsPage.newMessageText.length) {
+            props.onSendMessage();
         }
     }
 
@@ -41,8 +41,8 @@ const Dialogs = (props) => {
 
                 <textarea onChange={onChangeMessageText}
                           ref={newMessage}
-                          value={props.state.newMessageText}/>
-                <button onClick={sendMessage}
+                          value={props.dialogsPage.newMessageText}/>
+                <button onClick={onSendMessage}
                 >Send message
                 </button>
             </div>
