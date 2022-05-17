@@ -1,10 +1,6 @@
 import profileReducer from "./profileReducer";
 import dialogsReducer from "./dialogsReducer";
 
-const ADD_POST = "ADD-POST";
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
-const SEND_MESSAGE = 'SEND-MESSAGE';
-const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
 
 const store = {
     _state: {
@@ -44,6 +40,7 @@ const store = {
     getState() {
         return this._state;
     },
+
     subscribe(observer) {
         this._callSubscriber = observer;
     },
@@ -58,22 +55,7 @@ const store = {
 
 }
 
-export const addPostActionCreator = () => ({
-    type: ADD_POST,
-})
 
-export const updateNewPostTextActionCreator = (text) => ({
-    type: UPDATE_NEW_POST_TEXT,
-    newText: text,
-})
 
-export const sendMessageActionCreator = () => ({
-    type: SEND_MESSAGE,
-})
-
-export const updateNewMessageTextActionCreator = (text) => ({
-    type: UPDATE_NEW_MESSAGE_TEXT,
-    newText: text,
-})
 
 export default store;
